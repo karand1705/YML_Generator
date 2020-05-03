@@ -57,7 +57,7 @@ def execute():
     os.system('sudo docker-compose up -d')
 
 def listcomposer():
-    os.system('sudo docker-compose ls')
+    os.system('sudo docker-compose ps')
     
 def welcome():
     while 1:
