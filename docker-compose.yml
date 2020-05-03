@@ -1,0 +1,18 @@
+version: '3'
+services:
+  dbos:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: payal
+      MYSQL_DATABASE: mydb
+  portfolio:
+    image: httpd
+    restart: always
+    volumes:
+      - htdocs:/usr/local/apache2/htdocs/
+    depends_on:
+      - dbos
+    ports:
+      - 8081:80
